@@ -1,15 +1,20 @@
 # Baseball Hack
 
+## Requirements
+
+- python 3.5+
+
 ## Setup
 
 ```
-pip install jupyter matplotlib pandas seaborn pitchpx
+$ pip install jupyter matplotlib pandas seaborn pitchpx
 ```
 
-### mac
+In the case of macox, change matplotlibrc as follows,
 
-
-Change matplotlibrc as follows,
+```
+$ `vi $(python -c "import matplotlib;print(matplotlib.matplotlib_fname())")`
+```
 
 from
 
@@ -23,9 +28,15 @@ to
 backend      : Tkagg
 ```
 
-※ `vi $(python -c "import matplotlib;print(matplotlib.matplotlib_fname())")`
+## Usage
 
-## Pitch Type
+```
+$ jupyter notebook
+```
+
+## Data
+
+### Pitch Type
 
 ```
 'CH': 'Change-up',
