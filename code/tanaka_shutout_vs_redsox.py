@@ -81,12 +81,8 @@ situation = {
 }
 
 
-# In[9]:
+# In[30]:
 
-
-from IPython.display import display
-button = widgets.Button(description="Throw!")
-display(button)
 
 def throw(situation):
     print(situation)
@@ -144,6 +140,14 @@ def throw(situation):
                 situation["batter"] = d["bat_box_name"]
                 break
             i += 1
+
+
+# In[32]:
+
+
+from IPython.display import display
+button = widgets.Button(description="Throw!")
+display(button)
 
 button.on_click(throw(situation))
 
