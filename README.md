@@ -6,9 +6,13 @@
 
 ## Setup
 
+### Install
+
 ```
-$ pip install jupyter matplotlib pandas seaborn pitchpx
+$ pip install jupyter matplotlib pandas seaborn pitchpx ipywidgets
 ```
+
+### matplotlib
 
 In the case of macox, change matplotlibrc as follows,
 
@@ -16,16 +20,22 @@ In the case of macox, change matplotlibrc as follows,
 $ `vi $(python -c "import matplotlib;print(matplotlib.matplotlib_fname())")`
 ```
 
-**before**
+before
 
 ```
 backend      : macosx
 ```
 
-**after**
+after
 
 ```
 backend      : Tkagg
+```
+
+### jupyter
+
+```
+$ jupyter nbextension enable --py --sys-prefix widgetsnbextension
 ```
 
 ## Usage
@@ -44,13 +54,13 @@ Generate jupyter_notebook_config.py
 jupyter notebook --generate-config
 ```
 
-**before**
+before
 
 ```
 #c.FileContentsManager.post_save_hook = None
 ```
 
-**after**
+after
 
 ```
 import io
