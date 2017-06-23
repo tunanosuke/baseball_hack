@@ -135,11 +135,3 @@ if len(pitch_data) < pitch:
             break
         i += 1
 
-
-# In[12]:
-
-
-for _, d in data.iterrows():
-    print(1)
-    time.sleep(1)
-
