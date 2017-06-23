@@ -9,6 +9,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 import ipywidgets as widgets
+from IPython.display import display
 from collections import OrderedDict
 
 
@@ -81,7 +82,7 @@ situation = {
 }
 
 
-# In[30]:
+# In[8]:
 
 
 def throw(situation):
@@ -142,10 +143,9 @@ def throw(situation):
             i += 1
 
 
-# In[32]:
+# In[17]:
 
 
-from IPython.display import display
 button = widgets.Button(description="Throw!")
 display(button)
 
