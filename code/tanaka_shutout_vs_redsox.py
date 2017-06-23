@@ -31,7 +31,7 @@ data[["inning_number", "pit_box_name", "bat_box_name", "bat_hand_cd", "px", "pz"
 sns.palplot(sns.hls_palette(24, l = 0.5, s = 1))
 
 
-# In[8]:
+# In[5]:
 
 
 PITCH_TYPES = {
@@ -53,7 +53,7 @@ PITCH_TYPES = {
 }
 
 
-# In[9]:
+# In[6]:
 
 
 def get_marker(type):
@@ -68,7 +68,7 @@ def get_marker(type):
     return "H"
 
 
-# In[10]:
+# In[7]:
 
 
 inning = 1
@@ -77,7 +77,7 @@ pitch = 1
 cnt = 1
 
 
-# In[11]:
+# In[12]:
 
 
 sns.set_context("notebook", 1.5, {"lines.linewidth": 2})
@@ -116,8 +116,11 @@ for i in range(0, pitch):
 
     ax.scatter(pitch_data[i]["px"], pitch_data[i]["pz"], label = label, c = color, marker = marker)
 
-print("{ball_ct}ball {st_ct}strike".format(ball_ct = pitch_data[pitch]["pa_ball_ct"], st_ct = pitch_data[pitch]["pa_strike_ct"]))
-print("{out_cn}out".format(out_cn = pitch_data[pitch]["event_outs_ct"] - 1))
+if  len(pitch_data) > pitch:
+    print("{ball_ct}ball {st_ct}strike".format(ball_ct = pitch_data[pitch]["pa_ball_ct"], st_ct = pitch_data[pitch]["pa_strike_ct"]))
+    print("{out_cn}out".format(out_cn = pitch_data[pitch]["event_outs_ct"] - 1))
+
+ax.legend()
 
 pitch += 1
 cnt +=1
@@ -132,5 +135,11 @@ if len(pitch_data) < pitch:
             break
         i += 1
 
-ax.legend()
+
+# In[12]:
+
+
+for _, d in data.iterrows():
+    print(1)
+    time.sleep(1)
 
